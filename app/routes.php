@@ -13,8 +13,11 @@
 
 Route::get('/', function()
 {
+
 	return View::make('hello');
 });
+
+
 
 Route::group(['before'=>'guest'],function(){
 	Route::get('login',['as'=> 'login','uses'=>'AuthController@login']);

@@ -10,8 +10,42 @@ class AuthController extends \BaseController {
 
 	public function doLogin()
 	{
-		return Input::all();
+		$rules = array
+		(
+					'email'    => 'required',
+					'password' => 'required'
+		);
+		$allInput = Input::all();
+		$validation = Validator::make($allInput, $rules);
 
+		//dd($allInput);
+
+
+		if ($validation->fails())
+		{
+
+			return Redirect::route('login')
+						->withInput()
+						->withErrors($validation);
+		} else
+		{
+
+			$credentials = array
+			(
+						'email'    => Input::get('email'),
+						'password' => Input::get('password')
+			);
+
+			if (Auth::attempt($credentials))
+			{
+				return Redirect::intended('/');
+			} else
+			{
+				return Redirect::route('login')
+							->withInput()
+							->withErrors('Error in Email Address or Password.');
+			}
+		}
 	}
 
 }
