@@ -31,6 +31,12 @@ Route::group(['before'=>'auth'],function(){
 	Route::get('dashboard',['as'=> 'dashboard','uses'=>'DashboardController@home']);
 	/*DashboardController*/
 
+	/*UserController*/
+	Route::get('user/profile',['as'=> 'user.profile','uses'=>'UserController@profile']);
+	Route::put('user/profile',['as'=> 'user.doProfile','uses'=>'UserController@doProfile']);
+
+	/*UserController*/
+
 
 });
 
