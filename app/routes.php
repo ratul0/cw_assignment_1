@@ -51,6 +51,12 @@ Route::group(['before'=>'auth'],function(){
 Route::get('/test', function()
 {
 
-	return 'testing';
+	
+
+	$img = Image::make(file_get_contents('http://images.indianexpress.com/2015/01/abdevilliersreutersl.jpg'));
+
+	return $img->response('jpg');
+
+
 });
 

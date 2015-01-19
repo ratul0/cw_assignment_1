@@ -125,6 +125,7 @@ return array(
 		/* Additional Providers */
         
         'Zizaco\Entrust\EntrustServiceProvider', // Entrust Provider for roles
+		'Intervention\Image\ImageServiceProvider', //Image
 
 		/* Uncomment for use in development */
         'Way\Generators\GeneratorsServiceProvider', // Generators
@@ -196,6 +197,7 @@ return array(
 		'URL'               => 'Illuminate\Support\Facades\URL',
 		'Validator'         => 'Illuminate\Support\Facades\Validator',
 		'View'              => 'Illuminate\Support\Facades\View',
+		'Image'             => 'Intervention\Image\Facades\Image',
 
 	),
 
