@@ -51,11 +51,13 @@ Route::group(['before'=>'auth'],function(){
 Route::get('/test', function()
 {
 
-	
+	$data = ['name' => 'test'];
 
-	$img = Image::make(file_get_contents('http://images.indianexpress.com/2015/01/abdevilliersreutersl.jpg'));
+	Mail::send('emails.welcome', $data, function($message)
+	{
 
-	return $img->response('jpg');
+		$message->to('ratulcse27@gmail.com')->subject('Welcome!');
+	});
 
 
 });
