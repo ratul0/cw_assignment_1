@@ -11,7 +11,7 @@
                 @include('includes.alert')
 
                 <div class="panel-body">
-                    {{Form::open(['route'=>'user.doProfile', 'method'=> 'put','role'=>'form'])}}
+                    {{Form::open(['route'=>'user.doProfile', 'method'=> 'put','role'=>'form','files' => true])}}
                     <fieldset>
 
                         <div class="form-group">
@@ -25,9 +25,21 @@
                         <div class="form-group">
                             {{ Form::password('password_confirmation', array('class' => 'form-control', 'placeholder' => 'Confirm Password')) }}
                         </div>
-
                         <!-- Change this to a button or input when using this as a form -->
                         {{Form::submit('Edit Profile',['class'=> 'btn btn-lg btn-success btn-block'])}}
+                    </fieldset>
+
+                    {{Form::close()}}
+                </div>
+                <div class="panel-body">
+                    {{Form::open(['route'=>'user.doUploadImage', 'method'=> 'put','role'=>'form','files' => true])}}
+                    <fieldset>
+                        <div class="form-group">
+                            {{Form::label('userimage','Select An Image')}}    
+                            {{ Form::file('userimage', array('class' => 'form-control')) }}
+                        </div>
+                        <!-- Change this to a button or input when using this as a form -->
+                        {{Form::submit('Upload Image',['class'=> 'btn btn-lg btn-success btn-block'])}}
                     </fieldset>
                     {{Form::close()}}
                 </div>

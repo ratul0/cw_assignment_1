@@ -34,6 +34,7 @@ Route::group(['before'=>'auth'],function(){
 	/*UserController*/
 	Route::get('user/profile',['as'=> 'user.profile','uses'=>'UserController@profile']);
 	Route::put('user/profile',['as'=> 'user.doProfile','uses'=>'UserController@doProfile']);
+	Route::put('user/uploadImage',['as'=> 'user.doUploadImage','uses'=>'UserController@doUploadImage']);
 
 	/*UserController*/
 
