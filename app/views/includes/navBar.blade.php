@@ -33,6 +33,12 @@
 
         <li class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+				<?php $user = Auth::user(); ?>
+                @if($user != null)
+                {{$user->name}}
+                @else
+                {{'+You'}}
+                @endif
                 <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
             </a>
             <ul class="dropdown-menu dropdown-user">
