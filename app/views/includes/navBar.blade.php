@@ -7,7 +7,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="{{route('home')}}">CW</a>
+        <a class="navbar-brand" href="{{route('home')}}">CWC 2015</a>
     </div>
     <!-- /.navbar-header -->
 
