@@ -2,13 +2,23 @@
 
 class UserController extends \BaseController {
 
+
+
 	public function profile(){
-
-
-		return View::make('users.profile')
+		return View::make('users.showProfile')
 					->with('user',Auth::user())
 					->with('title','Profile');
 	}
+
+	public function profileUpdate(){
+
+
+		return View::make('users.updateProfile')
+					->with('user',Auth::user())
+					->with('title','Profile');
+	}
+
+
 
 
 	public function doProfile(){
