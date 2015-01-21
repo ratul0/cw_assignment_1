@@ -10,3 +10,4 @@ Admin | admin@cw.com | admin
 
 ## Technology Used
 Laravel 4.2
+Twitter Bootstrap
