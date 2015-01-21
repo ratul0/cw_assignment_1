@@ -1,7 +1,7 @@
 <!--footer start-->
 <footer class="site-footer">
     <div class="text-center">
-        {{Date('Y')}} &copy; SUST CSE
+        {{Date('Y')}} &copy; Shahjalal University of Science and Technology,Sylhet 
 
     </div>
 </footer>
