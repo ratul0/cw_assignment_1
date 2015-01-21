@@ -10,36 +10,7 @@ class UserController extends \BaseController {
 					->with('title','Profile');
 	}
 
-	public function doUploadImage(){
-		$file = Input::file('userimage');
-		if($file != null){
-			$user = Auth::user();
-			try{
-				$img = Image::make($file->getRealPath());
-				$img->resize(320,240);
-				$imagePath = 'usersImage/'.$user->email.'.jpg';
-				$img->save('public/'.$imagePath);
-				$user->photo = $imagePath;
-			}
-			catch(Exception $e){
-				return Redirect::back()
-						->with('error',"something went wrong! Try again.")
-						->withInput();
-			}
-			if($user->save()){
-				//Auth::logout();
-				return Redirect::route('dashboard');
-							//->with('success',"Account Created Successfully.Login Now.");
-			}else{
-				return Redirect::back()
-							->with('error',"something went wrong! Try again.");
-							//->withInput();
-			}
-		}
-		return Redirect::back()
-							->with('error',"something went wrong! Try again.");
-				
-	}
+
 	public function doProfile(){
 		$rules = [
 					'name'                  => 'required|alpha_num',
