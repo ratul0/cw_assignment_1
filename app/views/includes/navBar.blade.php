@@ -29,37 +29,38 @@
         @endif
 
 
+        @if(Auth::check())
 
-
-        <li class="dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-				<?php $user = Auth::user(); ?>
-                @if($user != null)
-                {{$user->name}}
-                @else
-                {{'+You'}}
-                @endif
-                <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
-            </a>
-            <ul class="dropdown-menu dropdown-user">
-                <li>
-                    <a href="{{route('user.profile.show')}}"><i class="fa fa-user fa-fw"></i> User Profile</a>
-                </li>
-                {{--<li>
-                    <a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
-                </li>--}}
-                <li class="divider"></li>
-                @if(Auth::check())
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                    <?php $user = Auth::user(); ?>
+                    @if($user != null)
+                    {{$user->name}}
+                    @else
+                    {{'+You'}}
+                    @endif
+                    <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                </a>
+                <ul class="dropdown-menu dropdown-user">
                     <li>
-                        <a href="{{route('logout')}}"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        <a href="{{route('user.profile.show')}}"><i class="fa fa-user fa-fw"></i> User Profile</a>
                     </li>
+                    {{--<li>
+                        <a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
+                    </li>--}}
+                    <li class="divider"></li>
 
-                @endif
+                        <li>
+                            <a href="{{route('logout')}}"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        </li>
 
-            </ul>
-            <!-- /.dropdown-user -->
-        </li>
-        <!-- /.dropdown -->
+
+
+                </ul>
+                <!-- /.dropdown-user -->
+            </li>
+            <!-- /.dropdown -->
+        @endif
     </ul>
     <!-- /.navbar-top-links -->
 
